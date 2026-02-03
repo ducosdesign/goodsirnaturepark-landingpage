@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potluck Lunch and Fundraiser - Goodsir Nature Park</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	
+	<!--	fira sans from google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	
+    <!-- favicon -->
+
+    <link rel="icon" type="image/x-icon" href="images/goodsir-favicon.svg">
+
+
+    <style>
+
+
+
+        hr {
+            margin: 1rem auto;
+            color: inherit;
+            border: 0;
+            border-top: 2px solid;
+            opacity: 1;
+        }
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Simple Logo Header */
+        .logo-header {
+            background-color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url("images/bg-forest.jpg");
+            color: white;
+            padding: 8rem 0 6rem;
+            text-align: center;
+            position: relative;
+            background-size: 320%;
+            background-position: top;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            /*color: #3f5641;*/
+            color:#fff;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-weight: 300;
+			  font-style: normal;
+        }
+
+        .event-details p {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        /* Main Content */
+        .content-wrapper {
+            background-color: #f5f5f0;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #3a4a37;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Two Column Layout */
+        .info-column {
+            background: white;
+            padding: 3rem;
+            border-radius: 0;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .info-column .finch-image {
+			width: 100%;
+			height: 250px;
+			border-radius: 0;
+			object-fit: cover;
+			float: left;
+			margin: 0 2rem 1.5rem 0;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+		}
+
+        .info-column::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .info-column h3 {
+            color: #4a5f45;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .info-column p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-weight: 300;
+			  font-style: normal;
+        }
+
+        .info-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-column ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-column ul li:before {
+            content: "•";
+            color: #d97941;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+        }
+
+        .form-column {
+            background: white;
+            padding: 3rem;
+            border-radius: 0;
+            margin-bottom: 2rem;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-weight: 300;
+			  font-style: normal;
+        }
+
+        .form-column h3 {
+            color: #4a5f45;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-align: center;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-weight: 300;
+			  font-style: normal;
+        }
+
+        .event-info-box {
+            background-color: #4a5f45;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-weight: 300;
+			  font-style: normal;
+        }
+
+        .event-info-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+        }
+
+        .event-info-box p {
+            margin: 0;
+            font-size: 0.95rem;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-weight: 300;
+			  font-style: normal;
+        }
+
+        .form-label {
+            color: #3a4a37;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+        }
+
+        .form-control, .form-select {
+            border: 1px solid #ccc;
+            border-radius: 0;
+            padding: 0.75rem;
+            font-size: 0.95rem;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #4a5f45;
+            box-shadow: 0 0 0 0.2rem rgba(74, 95, 69, 0.15);
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+        }
+
+        .form-check-label {
+            font-size: 0.95rem;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+        }
+
+        .btn-submit {
+            background-color: #d97941;
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 0;
+            width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+			font-family: "Fira Sans Condensed", sans-serif;
+			  font-style: normal;
+        }
+
+        .btn-submit:hover {
+            background-color: #c56a35;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+
+
+    .features-section {
+            background: #4a5f45;
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .feature-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+			
+        }
+
+        .success-alert {
+            display: none;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .success-alert.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3a4a37;
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        footer h5 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-number {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .info-column, .form-column {
+                padding: 2rem;
+            }
+
+            .logo-content {
+                font-size: 1.5rem;
+            }
+
+            .logo-content i {
+                font-size: 2rem;
+            }
+
+            .info-column .finch-image {
+                width: 150px;
+                height: 150px;
+                margin: 0 1rem 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Logo Header -->
+    <div class="logo-header">
+        <div class="container">
+            <div class="logo-content">
+				<img src="images/goodsir.svg" alt="Goodsir Nature Park" width="200">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="fira-sans-condensed-semibold">Potluck Lunch &amp; Fundraiser</h1>
+            <p class="fira-sans-condensed-regular">Support the Park &amp; Enjoy a Community Feast</p>
+            <hr width="360">
+             <div class="event-details">
+                <p>Salmon Valley, British Columbia | September 20, 2025 at 12:00 to 5:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-wrapper">
+        <div class="container">
+            <h2 class="section-title">Join Us for a Cause</h2>
+            
+            <div class="row">
+                <!-- Left Column - Why Fundraising -->
+                <div class="col-lg-6">
+                    <div class="info-column">
+                        <img src="./images/finch.png" alt="Bird at Goodsir Nature Park" class="finch-image">
+                        
+                        <h3>Canadian Botanical Conservatory</h3>
+                        
+                        <p>Goodsir Nature Park is a beloved community treasure in Salmon Valley, B.C., providing residents with beautiful trails, natural habitats, and peaceful recreation spaces. Our park serves as a vital green sanctuary where families gather, children explore, and wildlife thrives.</p>
+
+                        <p>As stewards of this precious natural resource, we are committed to preserving and enhancing the park for future generations. The funds raised through this community potluck will directly support essential maintenance, conservation efforts, and accessibility improvements.</p>
+
+                        <h3 style="margin-top: 2rem;">What Your Support Provides</h3>
+
+                        <ul>
+                            <li><strong>Trail Maintenance:</strong> Keep paths safe, clear, and accessible year-round for all visitors</li>
+                            <li><strong>Wildlife Conservation:</strong> Protect native species and restore critical natural habitats</li>
+                            <li><strong>Educational Programs:</strong> Guided nature walks, workshops, and environmental education for all ages</li>
+                            <li><strong>Community Spaces:</strong> Enhanced picnic areas and gathering spots for families and groups</li>
+                            <li><strong>Accessibility Projects:</strong> Creating barrier-free pathways to ensure nature is available to everyone</li>
+                            <li><strong>Interpretive Signage:</strong> New educational displays to help visitors learn about local flora and fauna</li>
+                        </ul>
+
+                        <p style="margin-top: 2rem;">By attending our potluck fundraiser, you're not just enjoying a wonderful community meal - you're investing in the health and sustainability of our shared natural spaces. Every contribution, whether through attendance, donations, or volunteer time, makes a meaningful difference in preserving this treasured park.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column - Registration Form -->
+                <div class="col-lg-6">
+                    <div class="form-column">
+                        <h3>Reserve Your Spot</h3>
+                    
+
+                        <form id="registrationForm">
+                            <!-- Personal Information -->
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+
+                            <!-- Number of Attendees -->
+                            <div class="mb-3">
+                                <label for="attendees" class="form-label">Number of Attendees *</label>
+                                <select class="form-select" id="attendees" required>
+                                    <option value="">Select number...</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                <option value="5+">5+ people</option>
+                                </select>
+                            </div>
+
+                            <!-- Dietary Restrictions -->
+                            <div class="mb-3">
+                                <label class="form-label">Dietary Restrictions</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="vegetarian">
+                                    <label class="form-check-label" for="vegetarian">Vegetarian</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="vegan">
+                                    <label class="form-check-label" for="vegan">Vegan</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="glutenfree">
+                                    <label class="form-check-label" for="glutenfree">Gluten-Free</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="allergies">
+                                    <label class="form-check-label" for="allergies">Food Allergies (specify in comments)</label>
+                                </div>
+                            </div>
+
+                            <!-- Contribution Type -->
+                            <div class="mb-3">
+                                <label class="form-label">I plan to bring: *</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="contribution" id="dish" value="dish" required>
+                                    <label class="form-check-label" for="dish">A dish to share</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="contribution" id="donation" value="donation">
+                                    <label class="form-check-label" for="donation">A monetary donation</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="contribution" id="both" value="both">
+                                    <label class="form-check-label" for="both">Both!</label>
+                                </div>
+                            </div>
+
+                            <!-- Dish Description -->
+                            <div class="mb-3">
+                                <label for="dishDescription" class="form-label">What dish will you bring?</label>
+                                <input type="text" class="form-control" id="dishDescription" placeholder="e.g., Caesar Salad, Apple Pie">
+                            </div>
+
+                            <!-- Volunteer Interest -->
+                            <div class="mb-3">
+                                <label for="volunteer" class="form-label">Would you like to volunteer?</label>
+                                <select class="form-select" id="volunteer">
+                                    <option value="">Select an option...</option>
+                                    <option value="setup">Yes - Event Setup (11:00 AM)</option>
+                                    <option value="serving">Yes - Food Serving</option>
+                                    <option value="cleanup">Yes - Event Cleanup (3:00 PM)</option>
+                                    <option value="nothanks">Not this time</option>
+                                </select>
+                            </div>
+
+                            <!-- Additional Comments -->
+                            <div class="mb-3">
+                                <label for="comments" class="form-label">Additional Comments</label>
+                                <textarea class="form-control" id="comments" rows="3" placeholder="Questions, special requests, or allergy details"></textarea>
+                            </div>
+
+                            <!-- Newsletter Signup -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        Send me updates about park events and conservation initiatives
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-submit">Register Now</button>
+
+                            <!-- Success Message -->
+                            <div class="success-alert" id="successMessage">
+                                <h5><i class="bi bi-check-circle-fill"></i> Registration Successful!</h5>
+                                <p>Thank you for registering! A confirmation has been sent to your email.<br>We look forward to seeing you on September 20th!</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Salmon Valley, British Columbia | 250.971.2337</p>
+			<hr>
+            <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">&copy; Goodsir Nature Park | 2025 All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Form submission with jQuery
+            $('#registrationForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Collect form data
+                const formData = {
+                    fullName: $('#fullName').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val(),
+                    attendees: $('#attendees').val(),
+                    dietaryRestrictions: {
+                        vegetarian: $('#vegetarian').is(':checked'),
+                        vegan: $('#vegan').is(':checked'),
+                        glutenFree: $('#glutenfree').is(':checked'),
+                        allergies: $('#allergies').is(':checked')
+                    },
+                    contribution: $('input[name="contribution"]:checked').val(),
+                    dish: $('#dishDescription').val(),
+                    volunteer: $('#volunteer').val(),
+                    comments: $('#comments').val(),
+                    newsletter: $('#newsletter').is(':checked'),
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Log form data (in production would POST to server)
+                console.log('Registration Submitted:', formData);
+                
+                // Show success message with jQuery animation
+                $('#successMessage').slideDown(400);
+                
+                // Smooth scroll to success message
+                $('html, body').animate({
+                    scrollTop: $('#successMessage').offset().top - 100
+                }, 600);
+                
+                // Reset form after delay
+                setTimeout(function() {
+                    $('#registrationForm')[0].reset();
+                    $('#successMessage').slideUp(400);
+                }, 5000);
+            });
+            
+            // jQuery UI effect - highlight form fields on focus
+            $('.form-control, .form-select').on('focus', function() {
+                $(this).effect('highlight', {color: '#e8f5e9'}, 500);
+            });
+            
+            // Fade in content on page load
+            $('.info-column, .form-column').hide().fadeIn(1200);
+            
+            // Smooth scroll for internal links
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this.getAttribute('href'));
+                if(target.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 800);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
